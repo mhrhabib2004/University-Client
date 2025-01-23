@@ -1,10 +1,11 @@
 import {  FieldValues, SubmitHandler } from "react-hook-form";
 import PHForm from "../../../components/form/PHForm";
-
 import { Button, Col, Flex } from "antd";
 import PHSelect from "../../../components/form/PHSelect";
 import { nameOption } from "../../../components/constends/semester";
 import { MonthOption } from "../../../components/constends/global";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { z } from "zod";
 
 
 
@@ -27,10 +28,14 @@ export default function CreateAcademicSemester() {
     }
     console.log(semesterdata)
   }
+  const academicSemesterResolbarshcema=z.object({
+    name:z.string({required_error:"this faild is rewuired"})
+
+  })
   return (
     <Flex align="center" justify="center">
     <Col span={6}>
-    <PHForm onSubmit={onSubmit}>
+    <PHForm onSubmit={onSubmit} resolver={zodResolver(academicSemesterResolbarshcema)}>
       <PHSelect label="Name" name="name" options={nameOption}/>
       <PHSelect label="Year" name="year" options={yearOption}/>
       <PHSelect label="Start Month" name="startMonth" options={MonthOption}/>
