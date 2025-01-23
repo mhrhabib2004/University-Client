@@ -1,16 +1,17 @@
 import { Form, Select } from "antd";
+import { Controller } from "react-hook-form";
 
-export default function PHSelect({label}) {
-    const handleChange = (value: string) => {
-        console.log(`selected ${value}`);
-      };
+export default function PHSelect({label,name}) {
+  
       
   return (
-    <Form.Item label={label}>
+   <Controller
+   name={name} 
+   render={({field:{onChange}})=>( 
+   <Form.Item label={label}>
     <Select
-      defaultValue="lucy"
       style={{ width: "100%" }}
-      onChange={handleChange}
+      onChange={onChange}
       options={[
         { value: 'jack', label: 'Jack' },
         { value: 'lucy', label: 'Lucy' },
@@ -19,6 +20,7 @@ export default function PHSelect({label}) {
       ]}
     />
    
-  </Form.Item>
+  </Form.Item>)}
+   />
   )
 }

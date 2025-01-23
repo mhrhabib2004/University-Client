@@ -12,9 +12,7 @@ export default function CreateAcademicSemester() {
     <Flex align="center" justify="center">
     <Col span={6}>
     <PHForm onSubmit={onSubmit}>
-      <PHInput type="text" name="name" label="Name"/>
-      <PHInput type="text" name="year" label="Year"/>
-      <PHSelect label="Name"/>
+      <PHSelect label="Name" name="name"/>
       <Button htmlType="submit">submit</Button>
     </PHForm>
     </Col>
