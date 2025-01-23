@@ -6,6 +6,7 @@ import { nameOption } from "../../../components/constends/semester";
 import { MonthOption } from "../../../components/constends/global";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
+import { academicSemesterSchema } from "../../../Schemas/academicSemesterSchema";
 
 
 
@@ -28,14 +29,11 @@ export default function CreateAcademicSemester() {
     }
     console.log(semesterdata)
   }
-  const academicSemesterResolbarshcema=z.object({
-    name:z.string({required_error:"this faild is rewuired"})
-
-  })
+ 
   return (
     <Flex align="center" justify="center">
     <Col span={6}>
-    <PHForm onSubmit={onSubmit} resolver={zodResolver(academicSemesterResolbarshcema)}>
+    <PHForm onSubmit={onSubmit} resolver={zodResolver(academicSemesterSchema)}>
       <PHSelect label="Name" name="name" options={nameOption}/>
       <PHSelect label="Year" name="year" options={yearOption}/>
       <PHSelect label="Start Month" name="startMonth" options={MonthOption}/>
