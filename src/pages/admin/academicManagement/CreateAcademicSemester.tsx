@@ -5,7 +5,6 @@ import PHSelect from "../../../components/form/PHSelect";
 import { nameOption } from "../../../components/constends/semester";
 import { MonthOption } from "../../../components/constends/global";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { z } from "zod";
 import { academicSemesterSchema } from "../../../Schemas/academicSemesterSchema";
 
 
