@@ -1,5 +1,5 @@
 
-export default function createAcademySemester() {
+export default function CreateAcademicSemester() {
   return (
     <div>createAcademySemester</div>
   )
