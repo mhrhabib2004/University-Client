@@ -10,7 +10,7 @@ export default function CreateAcademicSemester() {
   return (
     <PHForm onSubmit={onSubmit}>
       <PHInput type="text" name="name" label="Name"/>
-      <PHInput type="text" name="year" label="year"/>
+      <PHInput type="text" name="year" label="Year"/>
       <PHInput type="text" name="name" label="Name"/>
       <PHInput type="text" name="name" label="Name"/>
       <PHInput type="text" name="name" label="Name"/>
